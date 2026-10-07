@@ -2,7 +2,7 @@
 
 完全使用繁體中文、可直接在瀏覽器遊玩的世界歷史排序遊戲。以暖紙色、森林綠與簡潔的時間軸呈現 196 個歷史時刻；不需登入、後端或付費 API。
 
-預定正式網址：[世界史時間線](https://onuty.github.io/WikiTrivia/)
+遊戲網址：[世界史時間線](https://onuty.github.io/WikiTrivia/)
 
 ## 遊戲玩法
 
@@ -86,7 +86,7 @@ Linux CI 使用 `npx playwright install --with-deps chromium`。
 
 `vite.config.js` 已設定 `base: '/WikiTrivia/'`。沒有前端子路由，首頁、遊戲與結果都在同一路徑內切換，因此重新整理 `/WikiTrivia/` 不需 rewrite，也不會因遊戲路由產生 404。
 
-首次部署在 repository 的 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。之後 push 至 `main` 將依序執行：
+此 repository 已啟用 GitHub Actions Pages 部署。若複製至其他 repository，首次部署在 repository 的 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。之後 push 至 `main` 將依序執行：
 
 1. `npm ci`、lint、單元測試、正式 build。
 2. Chromium 瀏覽器測試（測試伺服器以正式 build 的 preview 啟動）。
@@ -107,4 +107,5 @@ Pull request 只執行建置與檢查，不部署。也可由 Actions 手動執�
 單元測試涵蓋公元前、跨紀元、同年位置、首尾插入、完整題庫排序、零年禁用與固定種子抽題。瀏覽器測試涵蓋 1920×1080、1440×900、1366×768、768×1024、390×844、375×667，以及三次答錯結算、連勝加分、最高分保存、十題每日挑戰、鍵盤、儲存不可用與小螢幕結算面板。
 
 自動化使用 Chromium 模擬尺寸；未宣稱已在實體 iPhone / iPad 或所有 Safari 版本完成測試。遊戲中途重新整理會回到首頁，本局不會恢復。未加入選配音效。
+
 
